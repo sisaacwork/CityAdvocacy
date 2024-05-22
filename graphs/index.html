@@ -23,7 +23,7 @@
         }
         h1 {
             text-align: center;
-            color: #333;
+            color: #000;
         }
         #container {
             height: 800px; /* Height adjusted for better spacing */
@@ -43,8 +43,6 @@
         
         .highcharts-data-table table {
             font-family: "HelveticaNeue-CondensedLight", "Helvetica Neue";
-            border-collapse: collapse;
-            border: 1px solid #ebebeb;
             margin: 10px auto;
             text-align: center;
             width: 100%;
@@ -54,7 +52,7 @@
         .highcharts-data-table caption {
             padding: 1em 0;
             font-size: 1.2em;
-            color: #555;
+            color: #000;
         }
         
         .highcharts-data-table th {
@@ -139,8 +137,8 @@ Highcharts.chart('container', {
             format: '{value}.00'
         },
         maxPadding: 0.2,
-        min: -0.5,
-        max: 10.5,
+        min: -1,
+        max: 11,
         plotLines: [{
             color: 'black',
             dashStyle: 'dot',
@@ -227,8 +225,7 @@ Highcharts.chart('container', {
             { x: 0.92, y: 2.07, z: 0.86, name: 'Bangkok', city: 'Bangkok, Thailand' },
             { x: 0, y: 3.85, z: 2.07, name: 'Jakarta', city: 'Jakarta, Indonesia' }
         ],
-        color: '#156082',
-        opacity: 0.25 // Set all bubbles to one color
+        color: '#156082' // Set all bubbles to one color
     }]
 });
 </script>
