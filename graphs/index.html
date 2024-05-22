@@ -17,9 +17,9 @@
             background-color: #f0f0f0;
         }
         .container {
-            width: 90%;
+            width: 100%;
+            max-width: 1800px; /* Optional max width */
             margin: auto;
-            padding-top: 50px;
         }
         h1 {
             text-align: center;
@@ -91,7 +91,7 @@ Highcharts.chart('container', {
         zooming: {
             type: 'xy'
         },
-        width: 1200, // Increase width for better label spacing
+        width: null, // Increase width for better label spacing
         height: 800  // Increase height for better label spacing
     },
 
