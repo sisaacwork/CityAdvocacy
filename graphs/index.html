@@ -42,7 +42,7 @@
         }
         
         .highcharts-data-table table {
-            font-family: Verdana, sans-serif;
+            font-family: "HelveticaNeue-CondensedLight", "Helvetica Neue";
             border-collapse: collapse;
             border: 1px solid #ebebeb;
             margin: 10px auto;
@@ -173,7 +173,7 @@ Highcharts.chart('container', {
                 enabled: true,
                 format: '{point.name}'
             },
-            color: '#7cb5ec' // Set all bubbles to one color
+            color: '#156082' // Set all bubbles to one color
         }
     },
 
@@ -227,7 +227,8 @@ Highcharts.chart('container', {
             { x: 0.92, y: 2.07, z: 0.86, name: 'Bangkok', city: 'Bangkok, Thailand' },
             { x: 0, y: 3.85, z: 2.07, name: 'Jakarta', city: 'Jakarta, Indonesia' }
         ],
-        color: '#156082' // Set all bubbles to one color
+        color: '#156082',
+        opacity: 0.25 // Set all bubbles to one color
     }]
 });
 </script>
