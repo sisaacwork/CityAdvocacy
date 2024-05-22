@@ -6,7 +6,7 @@
     <title>City Advocacy Interactive Graphs</title>
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/highcharts-more.js"></script>
-    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>F
     <script src="https://code.highcharts.com/modules/export-data.js"></script>
     <script src="https://code.highcharts.com/modules/accessibility.js"></script>
     <style>
@@ -93,7 +93,7 @@ Highcharts.chart('container', {
         zooming: {
             type: 'xy'
         },
-        width: 1200, // Increase width for better label spacing
+        width: 100%, // Increase width for better label spacing
         height: 800  // Increase height for better label spacing
     },
 
@@ -173,7 +173,8 @@ Highcharts.chart('container', {
                 enabled: true,
                 format: '{point.name}'
             },
-            color: '#7cb5ec' // Set all bubbles to one color
+            color: '#156082',
+            opacity: 0.25 // Set all bubbles to one color & opacity
         }
     },
 
