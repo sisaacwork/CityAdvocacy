@@ -12182,7 +12182,9 @@
             },
             tooltip: {
               formatter: function() {
-                '<b>Urban Agglomeration: </b>' + return this.series.name + '<br><b>Sum of building heights: </b>' + Highcharts.numberFormat(this.y, 0) + ' meters<br><b>Distance from urban centre: </b>' + (this.x / 10).toFixed(1) + '</b> kilometers';
+                return '<b>Urban Agglomeration: </b>' + this.series.name + 
+                       '<br><b>Sum of building heights: </b>' + Highcharts.numberFormat(this.y, 0) + ' meters' + 
+                       '<br><b>Distance from urban centre: </b>' + (this.x / 10).toFixed(1) + ' kilometers';
               }
             },
             plotOptions: {
