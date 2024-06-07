@@ -6,33 +6,13 @@
     <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 </head>
 <body>
-<select id="data-set" class="selectpicker" multiple data-live-search="true" data-actions-box="true">
+<select id="dataset" multiple size="3" onchange="updateChart()">
     <option value="New York">New York</option>
     <option value="Shenzhen">Shenzhen</option>
     <option value="Toronto-Hamilton">Toronto-Hamilton</option>
     <option value="Hong Kong">Hong Kong</option>
-    <option value = 'Tokyo-Yokohama'>Tokyo-Yokohama</option>	
-    <option value = 'Kuala Lumpur'>Kuala Lumpur</option>	
-    <option value = 'Shanghai'>Shanghai</option>	
-    <option value = 'Dubai'>Dubai</option>	
-    <option value = 'Chicago-Milwaukee'>Chicago-Milwaukee</option>	
-    <option value = 'Wuhan'>Wuhan</option>	
-    <option value = 'Jakarta'>Jakarta</option>	
-    <option value = 'Miami-South Florida'>Miami-South Florida</option>	
-    <option value = 'Sydney'>Sydney</option>	
-    <option value = 'Melbourne'>Melbourne</option>	
-    <option value = 'Brisbane-Gold Coast'>Brisbane-Gold Coast</option>	
-    <option value = 'London'>London</option>	
-    <option value = 'Mumbai'>Mumbai</option>	
-    <option value = 'Chongqing'>Chongqing</option>	
-    <option value = 'Chengdu'>Chengdu</option>	
-    <option value = 'Bangkok'>Bangkok</option>	
-    <option value = 'Seoul-Incheon'>Seoul-Incheon</option>	
-    <option value = 'Nanning'>Nanning</option>	
-    <option value = 'Singapore'>Singapore</option>	
-    <option value = 'Hangzhou'>Hangzhou</option>	
-    <option value = 'Sao Paulo'>Sao Paulo</option>	
-    <option value = 'Moscow'>Moscow</option>	<option value = 'Nanjing'>Nanjing</option>	<option value = 'Changsha'>Changsha</option>	<option value = 'Beijing'>Beijing</option>	<option value = 'Busan'>Busan</option>	<option value = 'Manila'>Manila</option>	<option value = 'Zhuhai'>Zhuhai</option>	<option value = 'Vancouver'>Vancouver</option>	<option value = 'Shenyang-Fushun'>Shenyang-Fushun</option>	<option value = 'Los Angeles-Long Beach'>Los Angeles-Long Beach</option>	<option value = 'Istanbul'>Istanbul</option>	<option value = 'Houston'>Houston</option>	<option value = 'Tel Aviv'>Tel Aviv</option>	<option value = 'Doha'>Doha</option>	<option value = 'Goiania'>Goiania</option>	<option value = 'Osaka-Kobe-Kyoto'>Osaka-Kobe-Kyoto</option>	<option value = 'Mexico City'>Mexico City</option>	<option value = 'Suzhou'>Suzhou</option>	<option value = 'San Francisco-San Jose'>San Francisco-San Jose</option>	<option value = 'Seattle'>Seattle</option>	<option value = 'Ho Chi Minh City'>Ho Chi Minh City</option>	<option value = 'Recife'>Recife</option>
+    <option value = 'Tokyo-Yokohama'>Tokyo-Yokohama</option>	<option value = 'Kuala Lumpur'>Kuala Lumpur</option>	<option value = 'Shanghai'>Shanghai</option>	<option value = 'Dubai'>Dubai</option>	<option value = 'Chicago-Milwaukee'>Chicago-Milwaukee</option>	<option value = 'Wuhan'>Wuhan</option>	<option value = 'Jakarta'>Jakarta</option>	<option value = 'Miami-South Florida'>Miami-South Florida</option>	<option value = 'Sydney'>Sydney</option>	<option value = 'Melbourne'>Melbourne</option>	<option value = 'Brisbane-Gold Coast'>Brisbane-Gold Coast</option>	<option value = 'London'>London</option>	<option value = 'Mumbai'>Mumbai</option>	<option value = 'Chongqing'>Chongqing</option>	<option value = 'Chengdu'>Chengdu</option>	<option value = 'Bangkok'>Bangkok</option>	<option value = 'Seoul-Incheon'>Seoul-Incheon</option>	<option value = 'Nanning'>Nanning</option>	<option value = 'Singapore'>Singapore</option>	<option value = 'Hangzhou'>Hangzhou</option>	<option value = 'Sao Paulo'>Sao Paulo</option>	<option value = 'Moscow'>Moscow</option>	<option value = 'Nanjing'>Nanjing</option>	<option value = 'Changsha'>Changsha</option>	<option value = 'Beijing'>Beijing</option>	<option value = 'Busan'>Busan</option>	<option value = 'Manila'>Manila</option>	<option value = 'Zhuhai'>Zhuhai</option>	<option value = 'Vancouver'>Vancouver</option>	<option value = 'Shenyang-Fushun'>Shenyang-Fushun</option>	<option value = 'Los Angeles-Long Beach'>Los Angeles-Long Beach</option>	<option value = 'Istanbul'>Istanbul</option>	<option value = 'Houston'>Houston</option>	<option value = 'Tel Aviv'>Tel Aviv</option>	<option value = 'Doha'>Doha</option>	<option value = 'Goiania'>Goiania</option>	<option value = 'Osaka-Kobe-Kyoto'>Osaka-Kobe-Kyoto</option>	<option value = 'Mexico City'>Mexico City</option>	<option value = 'Suzhou'>Suzhou</option>	<option value = 'San Francisco-San Jose'>San Francisco-San Jose</option>	<option value = 'Seattle'>Seattle</option>	<option value = 'Ho Chi Minh City'>Ho Chi Minh City</option>	<option value = 'Recife'>Recife</option>
+
 </select>
     <div id="container" style="height: 400px; width: 100%;"></div>
     </body>
@@ -11183,7 +11163,7 @@
         function updateChart() {
           const selectedOptions = Array.from(document.getElementById('dataset').selectedOptions);
           const series = selectedOptions.map(option => dataSets[option.value].series[0]);
-        
+
           Highcharts.chart('container', {
             chart: {
               type: 'area'
@@ -11192,10 +11172,7 @@
               description: 'Image description: An area chart comparing urban area datasets.'
             },
             title: {
-              text: 'Skyline Sections in the World\'s Tallest Urban Areas'
-            },
-            subtitle: {
-              text: 'Sum of building heights at 100-meter intervals from the urban core'
+              text: 'Skyline Sections: Tall Building Heights at 100-Meter Intervals in the World\'s Tallest Cities'
             },
             xAxis: {
               allowDecimals: false,
@@ -11494,9 +11471,4 @@
 
         // Initial chart
         updateChart();
-</script>
-<script>
-    $(document).ready(function() {
-            // Initialize bootstrap-select
-            $('.selectpicker').selectpicker();
 </script>
