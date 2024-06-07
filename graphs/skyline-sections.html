@@ -11180,6 +11180,11 @@
               },
               allowDecimals: false,
               max: 100,
+              labels: {
+                formatter: function() {
+                    return this.value / 10;
+                }
+              },
               accessibility: {
                 rangeDescription: ''
               }
